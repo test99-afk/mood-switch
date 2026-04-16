@@ -332,39 +332,39 @@ header h1 {
 @media (max-width: 480px) {
     body {
         align-items: center;
-        padding-bottom: 0;
+        padding: 10px 0;
     }
     
     .card {
-        padding: 30px 18px; /* Fits narrow screens securely */
-        gap: 24px;
-        border-radius: 28px;
+        padding: 24px 16px; /* Tighter padding */
+        gap: 16px; /* Tighter gap */
+        border-radius: 24px;
     }
     
     header h1 {
-        font-size: 1.8rem;
+        font-size: 1.7rem;
     }
     
     .subtitle {
-        font-size: 0.7rem;
+        font-size: 0.65rem;
     }
     
     .primary-btn {
-        padding: 20px 0; 
-        font-size: 1.2rem;
+        padding: 16px 0; /* Slimmer button height */
+        font-size: 1.15rem;
     }
     
     .display-area {
-        min-height: 190px;
+        min-height: 160px; /* Reduced so it doesn't push the button off screen */
         padding: 16px;
     }
     
     .emoji-display {
-        font-size: 3.2rem;
+        font-size: 2.8rem;
     }
     
     #moodText {
-        font-size: 1.35rem;
+        font-size: 1.25rem;
     }
 }
 
