@@ -21,11 +21,14 @@ body {
     background-color: var(--bg-color);
     color: var(--text-primary);
     font-family: var(--font-main);
-    height: 100vh;
+    min-height: 100vh;
+    min-height: 100dvh; /* Dynamic viewport height for perfect mobile sizing */
     display: flex;
     align-items: center;
     justify-content: center;
-    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: auto; /* Allows scrolling if phone screen is incredibly small */
+    padding: 20px 0;
     transition: background-color 1.5s cubic-bezier(0.19, 1, 0.22, 1);
 }
 
@@ -325,37 +328,67 @@ header h1 {
 }
 @keyframes blink { 50% { opacity: 0; } }
 
-/* Mobile Optimizations */
+/* Mobile Optimizations - All Phones */
 @media (max-width: 480px) {
     body {
-        align-items: flex-end; /* Push card downwards slightly for easier thumb reach */
-        padding-bottom: 5vh;
+        align-items: center;
+        padding-bottom: 0;
     }
     
     .card {
-        padding: 32px 20px;
+        padding: 30px 18px; /* Fits narrow screens securely */
         gap: 24px;
-        border-radius: 32px;
+        border-radius: 28px;
     }
     
     header h1 {
-        font-size: 2rem;
+        font-size: 1.8rem;
+    }
+    
+    .subtitle {
+        font-size: 0.7rem;
     }
     
     .primary-btn {
-        padding: 22px 0; /* Larger touch target */
-        font-size: 1.25rem;
+        padding: 20px 0; 
+        font-size: 1.2rem;
     }
     
     .display-area {
-        min-height: 200px;
+        min-height: 190px;
+        padding: 16px;
     }
     
     .emoji-display {
-        font-size: 3.5rem;
+        font-size: 3.2rem;
     }
     
     #moodText {
-        font-size: 1.4rem;
+        font-size: 1.35rem;
     }
 }
+
+/* Extra support for extremely short phones or landscape mode */
+@media (max-height: 700px) {
+    .card {
+        padding: 24px 16px;
+        gap: 16px;
+    }
+    .display-area {
+        min-height: 160px;
+    }
+    header h1 {
+        font-size: 1.6rem;
+    }
+    .emoji-display {
+        font-size: 2.8rem;
+        margin-bottom: 8px;
+    }
+    #moodText {
+        font-size: 1.2rem;
+    }
+    .primary-btn {
+        padding: 16px 0;
+    }
+}
+
