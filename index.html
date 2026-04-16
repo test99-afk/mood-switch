@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Mood Switch Pro | AI Mood Detector</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="background-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+    
+    <main id="app">
+        <div class="card">
+            <header>
+                <h1>Mood <span class="accent">Switch</span></h1>
+                <p class="subtitle">Neural Sentiment Analysis v2.0</p>
+            </header>
+
+            <div class="display-area">
+                <div id="resultBox" class="result-box">
+                    <div id="emojiDisplay" class="emoji-display">✨</div>
+                    <div class="text-container">
+                        <h2 id="moodText">Ready to Analyze</h2>
+                    </div>
+                    <div id="confidenceWrapper" class="confidence-wrapper">
+                        <div class="progress-container">
+                            <div class="progress-bar" id="confProgress"></div>
+                        </div>
+                        <div class="conf-details">
+                            <span class="conf-label">AI CONFIDENCE</span>
+                            <span class="conf-value-wrap"><span id="confValue" class="highlight">0</span><span class="percent">%</span></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="control-area">
+                <button id="moodBtn" class="primary-btn">
+                    <span class="btn-text">Check Mood</span>
+                    <div class="btn-glow"></div>
+                    <div class="scan-line"></div>
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
